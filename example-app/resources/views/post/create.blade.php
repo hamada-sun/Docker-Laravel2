@@ -1,5 +1,5 @@
 <x-app-layout>
-    @dump($errors)<!--ちょっと$errorsの正体が知りたくて-->
+    {{-- @dump($errors)<!--ちょっと$errorsの正体が知りたくて--> --}}
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
