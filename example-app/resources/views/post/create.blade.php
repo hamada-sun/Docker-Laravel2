@@ -7,11 +7,13 @@
     </x-slot>
 
     <div class="max-w-7xl mx-auto px-6">
-        @if (session('message'))
+        {{-- @if (session('message'))
             <div class="text-red-600 font-bold">
                 {{ session('message') }}
             </div>
-        @endif
+        @endif --}}
+
+        <x-message :message="session('message')"/><!-- Sec10-3P.308:自作コンポーネント-->
         <form method="post" action="{{ route('post.store') }}">
         @csrf
             <div class="mt-8">
