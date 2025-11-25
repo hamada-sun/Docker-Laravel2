@@ -29,5 +29,8 @@
             </div>
         </div>
         @endforeach
+        <div class="mb-4">{{--?  ページネーション Sec10-2P.303--}}
+            {{ $posts -> links() }}
+        </div>
     </div>
 </x-app-layout>
