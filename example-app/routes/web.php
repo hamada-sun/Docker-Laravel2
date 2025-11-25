@@ -24,10 +24,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-//リソースコントローラー使用の為
-// Route::get('/test', [TestController::class, 'test'])
-// ->name('test');
+Route::get('/test', [TestController::class, 'test'])
+->name('test');
 
+//リソースコントローラー使用の為
 // Route::post('post', [PostController::class, 'store'])
 // ->name('post.store');
 
