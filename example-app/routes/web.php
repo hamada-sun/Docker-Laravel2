@@ -8,11 +8,11 @@ use App\Http\Controllers\PostController;
 //何故か使わないuse App\Models\post が定義されていたため、削除
 
 Route::resource('post', PostController::class);//Sec9-5P.283 リソースコントローラー
-//ecxeptやonlyで対象範囲を限定できる(「7個も要らない」と言う話だと、作るときに限定する方法は無いものか。別の意味での有用性がありそう)
+//exceptやonlyで対象範囲を限定できる(「7個も要らない」と言う話だと、作るときに限定する方法は無いものか。別の意味での有用性がありそう)
 
 Route::get('/', function () {
     return view('welcome');
-});
+});//Sec10-4P.313ミドルウェアがついていたら外しておく。らしい…元から無かった
 
 Route::get('/dashboard', function () {
     return view('dashboard');
