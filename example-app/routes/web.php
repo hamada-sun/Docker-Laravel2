@@ -5,7 +5,10 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\PostController;
-use App\Models\Post;
+//何故か使わないuse App\Models\post が定義されていたため、削除
+
+Route::resource('post', PostController::class);//Sec9-5P.283 リソースコントローラー
+//ecxeptやonlyで対象範囲を限定できる(「7個も要らない」と言う話だと、作るときに限定する方法は無いものか。別の意味での有用性がありそう)
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,28 +24,27 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/test', [TestController::class, 'test'])
-->name('test');
+//リソースコントローラー使用の為
+// Route::get('/test', [TestController::class, 'test'])
+// ->name('test');
 
-Route::post('post', [PostController::class, 'store'])
-->name('post.store');
+// Route::post('post', [PostController::class, 'store'])
+// ->name('post.store');
 
+// Route::get('post', [PostController::class, 'index'])
+// ->name('post.index');
 
-Route::get('post', [PostController::class, 'index'])
-->name('post.index');
+// Route::get('post/create', [PostController::class, 'create']);
 
-Route::get('post/create', [PostController::class, 'create']);
+// Route::get('post/show/{post}', [PostController::class, 'show'])
+// ->name('post.show');
 
-Route::get('post/show/{post}', [PostController::class, 'show'])
-->name('post.show');
+// Route::get('post/{post}/edit', [PostController::class, 'edit'])
+// ->name('post.edit');
+// Route::patch('post/{post}', [PostController::class, 'update'])
+// ->name('post.update');
 
-Route::get('post/{post}/edit', [PostController::class, 'edit'])
-->name('post.edit');
-Route::patch('post/{post}', [PostController::class, 'update'])
-->name('post.update');
-
-Route::delete('post/{post}', [PostController::class, 'destroy'])
-->name('post.destroy');
-
+// Route::delete('post/{post}', [PostController::class, 'destroy'])
+// ->name('post.destroy');
 
 require __DIR__.'/auth.php';
