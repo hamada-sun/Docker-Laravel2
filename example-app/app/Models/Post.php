@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;//v12で、Factoryを使用するための準備。make:model -fで自動追加される
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    use HasFactory;//これでfactoryによるsail artisan db:seedが実行できる
+    use HasFactory;
     protected $fillable = [//WhiteList
         'title',
         'body',
@@ -19,6 +19,6 @@ class Post extends Model
     //
 
     public function user() {
-        return $this -> belongsTo(User::class);//belongsTo:一つの値
+        return $this -> belongsTo(User::class);
     }
 }

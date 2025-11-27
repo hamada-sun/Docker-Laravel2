@@ -17,7 +17,7 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            // 'title' => fake() -> text(20),//何故かラテン語になったので。仕様でtext()はLorem Ipsum(意味のないラテン語)を返すらしい？
+            // 'title' => fake() -> text(20),
             // 'body' => fake() -> text(50),
             'title' => fake() -> realText(20),
             'body' => fake() -> realText(50),

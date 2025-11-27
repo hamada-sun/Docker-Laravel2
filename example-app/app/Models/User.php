@@ -47,6 +47,6 @@ class User extends Authenticatable
     }
 
     public function posts() {
-        return $this->hasMany(Post::class);//hasMany:複数の値を持つ
+        return $this->hasMany(Post::class);
     }
 }

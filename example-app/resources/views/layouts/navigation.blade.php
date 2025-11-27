@@ -6,13 +6,12 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     {{-- <a href="{{ route('dashboard') }}"> --}}
-                    <a href="{{ route('post.index') }}">{{--アイコンクリックで  dashboardではなく、post/indexへ-P.315--}}
+                    <a href="{{ route('post.index') }}">
                     <x-application-logo width="16" class="block text-gray-800" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                {{-- Sec10-4P.311ナビゲーションメニューの編集 --}}
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     {{-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
@@ -73,7 +72,6 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
-                {{-- Sec10-4P.313ナビゲーションメニューの編集 レスポンシブ --}}
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             {{-- <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">

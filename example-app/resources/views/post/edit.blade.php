@@ -1,5 +1,4 @@
 <x-app-layout>
-    {{-- @dump($errors)<!--ちょっと$errorsの正体が知りたくて--> --}}
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
@@ -28,7 +27,6 @@
                 <x-input-error :messages="$errors->get('body')" class="mt-2" />
                 <textarea name="body" class="w-auto py-2 border border-gray-300 rounded-md"
                  id="body" cols="30" rows="5">{{ old('body', $post -> body) }}</textarea>
-                <!-- textarea内は空欄やタブを入れてはいけない。入力時に余計な空白ができる-->
             </div>
 
             <x-primary-button class="mt-4">

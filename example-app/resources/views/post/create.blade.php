@@ -1,5 +1,4 @@
 <x-app-layout>
-    {{-- @dump($errors)<!--ちょっと$errorsの正体が知りたくて--> --}}
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
@@ -7,13 +6,7 @@
     </x-slot>
 
     <div class="max-w-7xl mx-auto px-6">
-        {{-- @if (session('message'))
-            <div class="text-red-600 font-bold">
-                {{ session('message') }}
-            </div>
-        @endif --}}
-
-        <x-message :message="session('message')"/><!-- Sec10-3P.308:自作コンポーネント-->
+        <x-message :message="session('message')"/>
         <form method="post" action="{{ route('post.store') }}">
         @csrf
             <div class="mt-8">
@@ -29,7 +22,6 @@
                 <x-input-error :messages="$errors->get('body')" class="mt-2" />
                 <textarea name="body" class="w-auto py-2 border border-gray-300 rounded-md"
                  id="body" cols="30" rows="5">{{ old('body') }}</textarea>
-                <!-- textarea内は空欄やタブを入れてはいけない。入力時に余計な空白ができる-->
             </div>
 
             <x-primary-button class="mt-4">
