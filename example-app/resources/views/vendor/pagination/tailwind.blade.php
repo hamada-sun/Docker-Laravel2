@@ -1,5 +1,3 @@
-{{-- sail artisan vendor:publish --tag=laravel-pagination で、
-    vendor内のペジネーション用ビューファイルをコピー。これを編集することで既存の設定を上書きできる。vendor内を直接編集してはいけない --}}
 @if ($paginator->hasPages())
     <nav role="navigation" aria-label="{{ __('Pagination Navigation') }}" class="flex items-center justify-between">
         <div class="flex justify-between flex-1 sm:hidden">
