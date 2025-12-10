@@ -13,7 +13,7 @@ class PostController extends Controller
     public function index()
     {
         // $posts=Post::with('user') -> get();//eagerコード
-        $posts = Post::paginate(10);//ページネーションSec10-2P.303
+        $posts = Post::paginate(3);//ページネーションSec10-2P.303
         return view('post.index', compact('posts'));
         //
     }
